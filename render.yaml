@@ -1,0 +1,18 @@
+services:
+  - type: worker
+    name: dental-bot
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_TELEGRAM_IDS
+        sync: false
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///./dental_bot.db
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_API_BASE_URL
+        sync: false
+      - key: LLM_MODEL
+        sync: false
